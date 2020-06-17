@@ -93,29 +93,8 @@ class StarMoranSim:
                 sim.success = True
                 break
 
-            
-#################################################################
-# Run a single Moran Sim on a Ring population.
-class RingMoranSim:
-    def __init__(sim, N, r):
-        i = 1
-        while (True):
-            val = random.random()
-            dec_prob = 1.0 / (r * i + N - i) 
-            inc_prob = r * dec_prob
-            if (val < dec_prob):
-                i -= 1
-            elif (val > 1 - inc_prob):
-                i += 1
-            if i == 0:
-                sim.success = False
-                break
-            if i == N:
-                sim.success = True
-                break
-
 #################################################################   
-# Run a single Moran Sim on a Ring population.
+# Run a single Moran Sim on a Lattice population.
 ## INCOMPLETE
 class RingMoranSim:
     def __init__(sim, N, r):
